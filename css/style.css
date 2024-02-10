@@ -98,7 +98,7 @@ span {
         /* Adjust this value based on your header height */
         right: 0;
         left: 0;
-        background: var(--second-color);
+        background-color: rgba(42, 42, 42, 0.7);
         text-align: center;
         transition: all .45s ease;
         z-index: 999;
