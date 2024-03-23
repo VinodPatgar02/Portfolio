@@ -87,6 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
 var DownloadBtn = document.getElementById('DownloadBtn');
 DownloadBtn.addEventListener('click', function(event) {
     event.preventDefault();
-    var cvUrl = 'https://drive.google.com/file/d/1NC5POaXt2aDSjQyiP4MjR6-h7Z8tNG5w/view?usp=sharing';
+    var cvUrl = 'https://drive.google.com/file/d/1fCVzuE6UN8n3AnPPoyfVwyHgAHakCgAU/view?usp=drive_link';
     window.open(cvUrl, '_blank');
 });
