@@ -544,11 +544,7 @@ form textarea {
     
     section {
         padding: 130px 10% 100px;
-    }
-    
-    /* First 4 pages */
-    .home, .about, .tech-stack, .experience {
-        min-height: 100vh;
+        min-height: 100vh; /* Ensure sections take full viewport height */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -574,7 +570,6 @@ form textarea {
         position: fixed;
         width: 100%;
         z-index: 1000;
-        background: var(--bg-color); /* Ensure header has background */
     }
     
     :root {
@@ -583,14 +578,13 @@ form textarea {
         --p-font: 0.9rem;
     }
     
-    /* First 4 pages */
-    .home, .about, .tech-stack, .experience {
+    section {
+        padding: 120px 8% 90px;
         min-height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 120px 8% 90px;
     }
     
     .home {
@@ -607,9 +601,6 @@ form textarea {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Ensure background image stays fixed */
     }
     
     .about-text {
@@ -633,22 +624,8 @@ form textarea {
         width: 160px;
     }
     
-    .tech-stack {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
     .tech-stack-content {
         grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .experience {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
     
     .portfolio-content {
@@ -658,6 +635,7 @@ form textarea {
     .contact {
         grid-template-columns: 1fr;
         gap: 3rem;
+        min-height: 100vh;
     }
     
     .contact-text {
@@ -709,13 +687,12 @@ form textarea {
         --p-font: 0.9rem;
     }
     
-    /* First 4 pages */
-    .home, .about, .tech-stack, .experience {
+    section {
+        padding: 100px 5% 80px;
         min-height: 100vh;
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
-        padding: 100px 5% 80px;
     }
     
     .home {
@@ -723,12 +700,6 @@ form textarea {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .about {
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll; /* For better mobile performance */
     }
     
     .slide {
@@ -806,15 +777,14 @@ form textarea {
         --p-font: 0.8rem;
     }
     
-    /* First 4 pages */
-    .home, .about, .tech-stack, .experience {
+    section {
+        padding: 90px 5% 70px;
         min-height: 100vh;
         width: 100%;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 90px 5% 70px;
     }
     
     .home {
@@ -824,12 +794,6 @@ form textarea {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .about {
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
     }
     
     .home-text {
@@ -858,6 +822,11 @@ form textarea {
     
     .about {
         padding: 60px 5%;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .about-text h2 {
@@ -903,6 +872,25 @@ form textarea {
     .experience-details h4 {
         font-size: 16px;
     }
+    
+    .portfolio-item {
+        padding: 20px;
+    }
+    
+    .contact {
+        padding: 80px 5% 70px;
+        min-height: 100vh;
+    }
+    
+    .contact-text h2 {
+        font-size: var(--h2-font);
+    }
+    
+    .contact-icons i {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
 }
 
 /* Mobile Devices (Small phones, 420px and below) */
@@ -917,7 +905,6 @@ form textarea {
         font-size: 25px;
     }
     
-    /* First 4 pages focused */
     .home {
         padding-top: 80px;
         height: 100vh;
@@ -925,14 +912,6 @@ form textarea {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .about {
-        /* Force background image to appear */
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: scroll; /* Better for mobile */
     }
     
     .one {
@@ -978,6 +957,14 @@ form textarea {
     .experience-details h4 {
         font-size: 14px;
     }
+    
+    .contact-form textarea {
+        height: 150px;
+    }
+    
+    .contact-form .submit {
+        width: 100%;
+    }
 }
 
 /* Extra Small Mobile Devices (320px and below) */
@@ -988,8 +975,7 @@ form textarea {
         --p-font: 0.75rem;
     }
     
-    /* First 4 pages */
-    .home, .about, .tech-stack, .experience {
+    section {
         padding: 80px 5% 60px;
         min-height: 100vh;
         display: flex;
@@ -1003,13 +989,6 @@ form textarea {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .about {
-        /* Force background image to appear */
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
     }
     
     .one {
@@ -1054,5 +1033,9 @@ form textarea {
     
     .experience-details h4 {
         font-size: 13px;
+    }
+    
+    .contact-form .submit {
+        font-size: 0.9rem;
     }
 }
