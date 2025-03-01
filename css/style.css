@@ -562,483 +562,401 @@ form textarea {
     background: var(--main-color);
 }
 
-/* Base Responsive Breakpoints */
-/* Default styles for larger screens (above 1200px) */
+/* Mobile-First Base Styles (up to 576px) */
 :root {
-    --big-font: 4.5rem;
-    --h2-font: 3rem;
-    --p-font: 1.1rem;
+    --big-font: 2.5rem;
+    --h2-font: 1.8rem;
+    --p-font: 0.9rem;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 section {
-    padding: 150px 15% 120px;
+    padding: 80px 5% 60px;
     max-width: 100%;
     box-sizing: border-box;
 }
 
 header {
-    padding: 20px 15%;
+    padding: 15px 5%;
     max-width: 100%;
     box-sizing: border-box;
 }
 
-/* Large Devices (Desktops, 1200px and below) */
-@media (max-width: 1200px) {
-    :root {
-        --big-font: 4rem;
-        --h2-font: 2.5rem;
-        --p-font: 1rem;
-    }
-    
-    section {
-        padding: 130px 10% 100px;
-    }
-    
-    .home-text h3 {
-        font-size: 2.5rem;
-    }
-    
-    .about-text {
-        max-width: 70%;
-    }
-    
-    .portfolio-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.navlist {
+    display: none;
 }
 
-/* Medium Devices (Tablets, 992px and below) */
-@media (max-width: 992px) {
-    header {
-        padding: 18px 10%;
-    }
-    
-    :root {
-        --big-font: 3.5rem;
-        --h2-font: 2.2rem;
-        --p-font: 0.9rem;
-    }
-    
-    section {
-        padding: 120px 8% 90px;
-    }
-    
-    .home {
-        height: auto;
-        padding-top: 150px;
-        padding-bottom: 100px;
-    }
-    
-    .about {
-        padding: 80px 8%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .about-text {
-        max-width: 100%;
-        margin-right: 0;
-        text-align: center;
-    }
-    
-    .about-text h2, .about-text h4 {
-        text-align: center;
-    }
-    
-    .about-text p {
-        text-align: center;
-    }
-    
-    .about-text .btn {
-        margin: 30px auto;
-        display: block;
-        width: 160px;
-    }
-    
-    .tech-stack-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .portfolio-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .contact {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .contact-text {
-        text-align: center;
-    }
-    
-    .contact-text p {
-        text-align: center;
-    }
+.menu-icon {
+    display: block;
 }
 
-/* Small Devices (Landscape Phones, 768px and below) */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 5%;
-    }
-    
-    .menu-icon {
-        display: block;
-    }
-    
-    .navlist {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: rgba(42, 42, 42, 0.95);
-        text-align: center;
-        transition: all .45s ease;
-        padding: 20px 0;
-    }
-    
-    .navlist.active {
-        display: flex;
-    }
-    
-    .navlist a {
-        display: block;
-        margin: 15px 0;
-        font-size: 18px;
-    }
-    
+.home {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.one {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0 14px;
+}
+
+.two {
+    font-size: 20px;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+}
+
+.home-text h3 {
+    font-size: 1.6rem;
+    margin: 0 0 15px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+
+.about-item {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.about-text ul {
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.tech-stack-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.tech-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.tech-box h3 {
+    font-size: 16px;
+}
+
+.experience-item {
+    flex-direction: column;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.experience-period {
+    margin-bottom: 10px;
+}
+
+.experience-details h3 {
+    font-size: 20px;
+}
+
+.experience-details h4 {
+    font-size: 16px;
+}
+
+.portfolio-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    padding: 20px;
+}
+
+.contact {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.contact-text {
+    text-align: center;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    padding: 12px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form .submit {
+    width: 100%;
+    font-size: 14px;
+}
+
+.end {
+    padding: 15px 5%;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Small Devices (576px and up) */
+@media (min-width: 576px) {
     :root {
         --big-font: 3rem;
         --h2-font: 2rem;
-        --p-font: 0.9rem;
+        --p-font: 1rem;
     }
-    
+
     section {
-        padding: 100px 5% 80px;
+        padding: 100px 8% 80px;
     }
-    
-    .slide {
-        margin-bottom: 15px;
+
+    .home {
+        padding-top: 120px;
     }
-    
+
     .one {
         font-size: 20px;
         line-height: 40px;
         padding: 0 18px;
     }
-    
+
     .two {
         font-size: 25px;
     }
-    
-    .home-text h1 {
-        font-size: var(--big-font);
-    }
-    
+
     .home-text h3 {
         font-size: 2rem;
     }
-    
-    .home-text h2 {
-        font-size: 1.1rem;
-    }
-    
+
     .tech-stack-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 1.5rem;
     }
-    
-    .experience-item {
-        flex-direction: column;
-        padding: 20px;
+
+    .tech-box img {
+        width: 60px;
+        height: 60px;
     }
-    
-    .experience-period {
-        margin-bottom: 10px;
+
+    .tech-box h3 {
+        font-size: 18px;
     }
-    
+
     .portfolio-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
-    
+
     .portfolio-item {
         padding: 25px;
     }
-    
-    .contact-form form input,
-    .contact-form form textarea {
-        padding: 12px;
-    }
-    
-    .end {
-        padding: 20px 5%;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
 }
 
-/* Extra Small Devices (Portrait Phones, 576px and below) */
-@media (max-width: 576px) {
+/* Medium Devices (768px and up) */
+@media (min-width: 768px) {
     :root {
-        --big-font: 2.5rem;
-        --h2-font: 1.8rem;
-        --p-font: 0.8rem;
+        --big-font: 3.5rem;
+        --h2-font: 2.2rem;
+        --p-font: 1.1rem;
     }
-    
+
+    header {
+        padding: 18px 10%;
+    }
+
     section {
-        padding: 90px 5% 70px;
+        padding: 120px 10% 100px;
     }
-    
-    .home-text h1 {
-        font-size: var(--big-font);
+
+    .home {
+        height: 100vh;
     }
-    
-    .home-text h3 {
-        font-size: 1.6rem;
-        margin-bottom: 25px;
-    }
-    
-    .one {
-        font-size: 16px;
-        line-height: 30px;
-        padding: 0 14px;
-    }
-    
-    .two {
-        font-size: 20px;
-    }
-    
-    .about {
-        padding: 60px 5%;
-    }
-    
-    .about-text h2 {
-        font-size: var(--h2-font);
-    }
-    
-    .about-text h4 {
-        font-size: 18px;
-        margin: 20px 0;
-    }
-    
-    .about-text p {
-        font-size: 0.9rem;
-    }
-    
+
     .tech-stack-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-    
-    .tech-box {
-        padding: 15px;
-    }
-    
-    .tech-box img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .tech-box h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    
+
     .experience-item {
-        padding: 20px 15px;
+        flex-direction: row;
+        padding: 30px;
     }
-    
-    .experience-details h3 {
-        font-size: 20px;
+
+    .portfolio-content {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .experience-details h4 {
-        font-size: 16px;
-    }
-    
-    .portfolio-item {
-        padding: 20px;
-    }
-    
+
     .contact {
-        padding: 80px 5% 70px;
-    }
-    
-    .contact-text h2 {
-        font-size: var(--h2-font);
-    }
-    
-    .contact-icons i {
-        height: 40px;
-        width: 40px;
-        font-size: 18px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobile Devices (Small Phones, 420px and below) */
+/* Large Devices (992px and up) */
+@media (min-width: 992px) {
+    :root {
+        --big-font: 4rem;
+        --h2-font: 2.5rem;
+        --p-font: 1.1rem;
+    }
+
+    header {
+        padding: 20px 15%;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navlist {
+        display: flex;
+    }
+
+    section {
+        padding: 130px 15% 110px;
+    }
+
+    .about-item {
+        max-width: 90%;
+    }
+
+    .tech-stack-content {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .portfolio-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Extra Large Devices (1200px and up) */
+@media (min-width: 1200px) {
+    :root {
+        --big-font: 4.5rem;
+        --h2-font: 3rem;
+        --p-font: 1.2rem;
+    }
+
+    section {
+        padding: 150px 15% 120px;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 22px 15%;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .portfolio-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Ultra Large Devices (1920px and up) */
+@media (min-width: 1920px) {
+    :root {
+        --big-font: 5rem;
+        --h2-font: 3.5rem;
+        --p-font: 1.3rem;
+    }
+
+    section {
+        padding: 160px 20% 130px;
+    }
+
+    header {
+        padding: 25px 20%;
+    }
+
+    .home-text h3 {
+        font-size: 2.8rem;
+    }
+
+    .about-item {
+        max-width: 80%;
+    }
+}
+
+/* Extra Small Devices (below 420px) */
 @media (max-width: 420px) {
     :root {
         --big-font: 2.2rem;
-        --h2-font: 1.5rem;
-        --p-font: 0.8rem;
+        --h2-font: 1.6rem;
+        --p-font: 0.85rem;
     }
-    
-    .logo {
-        font-size: 25px;
-    }
-    
-    .home {
-        padding-top: 120px;
-    }
-    
+
     .one {
         font-size: 14px;
         line-height: 28px;
         padding: 0 12px;
     }
-    
+
     .two {
         font-size: 18px;
     }
-    
+
     .home-text h3 {
         font-size: 1.4rem;
-        margin-bottom: 20px;
     }
-    
+
     .btn {
-        padding: 12px 24px;
-        font-size: 1rem;
+        padding: 10px 18px;
+        font-size: 0.9rem;
     }
-    
-    .about-text h4 {
+
+    .about-text ul {
         font-size: 16px;
     }
-    
-    .about-text p {
-        font-size: 0.85rem;
-    }
-    
+
     .tech-stack-content {
         grid-template-columns: 1fr;
     }
-    
-    .tech-box {
-        padding: 20px;
-    }
-    
+
     .experience-details h3 {
         font-size: 18px;
     }
-    
+
     .experience-details h4 {
         font-size: 14px;
     }
-    
-    .contact-form textarea {
-        height: 150px;
-    }
-    
-    .contact-form .submit {
-        width: 100%;
-    }
 }
 
-/* Extra Small Mobile Devices (320px and below) */
+/* Ultra Small Devices (below 320px) */
 @media (max-width: 320px) {
     :root {
         --big-font: 2rem;
         --h2-font: 1.4rem;
-        --p-font: 0.75rem;
+        --p-font: 0.8rem;
     }
-    
+
     section {
-        padding: 80px 5% 60px;
+        padding: 70px 4% 50px;
     }
-    
+
     .one {
         font-size: 12px;
         line-height: 24px;
         padding: 0 10px;
     }
-    
+
     .two {
         font-size: 16px;
     }
-    
+
     .home-text h3 {
         font-size: 1.2rem;
     }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .about-text h4 {
-        font-size: 14px;
-    }
-    
-    .tech-box {
-        padding: 15px;
-    }
-    
+
     .tech-box img {
         width: 40px;
         height: 40px;
     }
-    
+
     .tech-box h3 {
         font-size: 14px;
-    }
-    
-    .experience-details h3 {
-        font-size: 16px;
-    }
-    
-    .experience-details h4 {
-        font-size: 13px;
-    }
-    
-    .contact-form .submit {
-        font-size: 0.9rem;
-    }
-}
-
-/* Extra Large Screens (Above 1920px) */
-@media (min-width: 1920px) {
-    :root {
-        --big-font: 5rem;
-        --h2-font: 3.5rem;
-        --p-font: 1.2rem;
-    }
-    
-    section {
-        padding: 160px 20% 130px;
-        max-width: 1920px;
-        margin: 0 auto;
-    }
-    
-    header {
-        padding: 25px 20%;
-        max-width: 1920px;
-        margin: 0 auto;
-    }
-    
-    .home-text h3 {
-        font-size: 3rem;
-    }
-    
-    .about-text {
-        max-width: 60%;
-    }
-    
-    .portfolio-content {
-        grid-template-columns: repeat(4, 1fr);
     }
 }
