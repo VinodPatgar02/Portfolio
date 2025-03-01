@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -20,9 +21,22 @@
     --p-font: 1.1rem;
 }
 
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+body {
+    overflow-y: auto; /* Enables scrolling */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    scrollbar-width:
+    /* Hides scrollbar in Chrome, Safari, Edge */
 }
 
 header {
@@ -38,9 +52,9 @@ header {
     border-bottom: 1px solid transparent;
     transition: opacity 0.5s ease, background 0.3s ease;
     background: rgba(42, 42, 42, 0.9);
-    
+    max-width: 1920px; /* Constrain width on large screens */
+    margin: 0 auto;
 }
-
 
 header.visible {
     transform: translateY(0);
@@ -85,7 +99,6 @@ span {
 
 .menu-icon {
     display: none;
-    /* Initially hide the menu icon */
     cursor: pointer;
     padding: 15px;
 }
@@ -97,9 +110,10 @@ span {
     margin: 5px 0;
 }
 
-
 section {
     padding: 160px 15% 120px;
+    max-width: 1920px; /* Constrain width on large screens */
+    margin: 0 auto;
 }
 
 .home {
@@ -113,8 +127,6 @@ section {
     align-items: center;
     justify-content: flex-start;
 }
-
-
 
 .slide {
     margin-bottom: 20px;
@@ -149,18 +161,13 @@ section {
 
 .home-text h3 {
     color: var(--text-color);
-    margin: 0 0 20px; 
+    margin: 0 0 20px;
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.5;
 }
-
-
 
 .button {
     display: inline-block;
-    align-items: center;
-    justify-content: center;
 }
 
 .btn {
@@ -182,56 +189,75 @@ section {
 .about {
     background-image: url(/img/133.png);
     background-size: cover;
-    background-position: right;
+    background-position: center;
+    padding: 75px 15% 80px;
+}
+
+
+
+.about-content {
+    margin-top: 2rem;
     display: flex;
-    justify-content: right;
-    align-items:flex-start;
-    /* Align items to the st;art of the container */
-    padding: 100px;
-    /* Adjusted padding */
-    box-sizing: border-box;
-    /* Include padding in the total width */
-    page-break-before: always;
-    padding: 60px 60px 62px;
+    justify-content: flex-start;
 }
 
-.about-text {
-    flex: 1;
-    max-width: 60%;
-    text-align:left;
-    margin-right: 100px;
-    /* Adjusted margin */
+.about-item {
+    background: var(--second-bg-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 90%;
+    margin-left: auto;
+}
+.main-text h2{
+    font-size: 40px;
+    text-align: center;
 }
 
-.about-text h2 {
-    font-size: 42px;
-    line-height: 1.0;
-    text-align: right;
-    margin-right: 320px;
+.about-text ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: var(--text-color);
+    font-size: 21px;
+    line-height: 1.3;
+    text-align: left;
 }
 
-.about-text h4 {
+.about-list {
+    list-style-type: disc !important; /* Ensures visible bullet points */
+    padding-left: 30px; /* Adjust left padding for better visibility */
+}
+.about-text li {
+    margin-bottom: 12px;
+}
+
+.center-heading {
+    text-align: center;
     font-size: 22px;
     font-weight: 600;
     color: var(--text-color);
-    margin: 40px 0 40px;
-    text-align: right;
-    margin-right: 290px;
-    
+    margin: 20px 0;
+}
+.location {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+    text-align: center;
 }
 
-.about-text p {
-    color: var(--text-color);
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    text-align: justify;
+.button-container {
+    text-align: center; /* Center aligns the Connect button */
 }
 
 .about-text .btn {
-    margin: auto 340px;
-    
+    display: inline-block;
+    margin-top: 10px;
+    width: 160px;
 }
+
 
 .tech-stack {
     background-image: url(/img/122.png);
@@ -240,11 +266,10 @@ section {
     padding: 80px 15% 100px;
 }
 
-.tech-stack .main-text{
-    font-size: 28px;
+.tech-stack .main-text {
+    font-size: 25px;
     text-align: left;
 }
-
 
 .tech-stack-content {
     display: grid;
@@ -262,6 +287,7 @@ section {
     text-align: center;
 }
 
+
 .tech-box img {
     width: 60px;
     height: 60px;
@@ -277,10 +303,9 @@ section {
 }
 
 .tech-box:hover {
-    transform: translateY(-8px);
-    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
-
 
 .experience {
     background-image: url(/img/133.png);
@@ -289,7 +314,7 @@ section {
     padding: 70px 15% 80px;
 }
 
-.main-text{
+.main-text {
     font-size: 25px;
     text-align: right;
 }
@@ -305,9 +330,13 @@ section {
     margin-bottom: 2rem;
     display: flex;
     gap: 2rem;
-    margin-right: 1px; 
-    margin-left: auto; 
-    max-width: 90%; 
+    max-width: 90%;
+    margin-left: auto;
+}
+
+.experience-item:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
 
 .experience-period {
@@ -344,26 +373,26 @@ section {
     background-position: center;
 }
 
-.portfolio .main-text{
+.portfolio .main-text {
     font-size: 25px;
     text-align: left;
 }
+
 .portfolio-content {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 4 tiles side by side */
-    grid-template-rows: 400px;
-    justify-content: left;
-    align-items: left;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    justify-content: center;
+    align-items: center;
     gap: 2.5rem;
     margin-top: 2rem;
-    max-width: 100%;
+    max-width: 1400px; /* Constrain width */
     margin-left: auto;
     margin-right: auto;
 }
 
 .portfolio-item {
-    background: var(--second-bg-color); /* Matching Experience section */
-    border-radius: 8px;
+    background: var(--second-bg-color);
+    border-radius: 10px;
     padding: 30px;
     text-align: center;
     display: flex;
@@ -389,7 +418,6 @@ section {
     font-size: 16px;
     margin-bottom: 15px;
 }
-
 
 .portfolio-item a {
     background: var(--main-color);
@@ -535,7 +563,26 @@ form textarea {
 }
 
 /* Base Responsive Breakpoints */
-/* Large Devices (Desktops, 1200px and up) */
+/* Default styles for larger screens (above 1200px) */
+:root {
+    --big-font: 4.5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+}
+
+section {
+    padding: 150px 15% 120px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px 15%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Large Devices (Desktops, 1200px and below) */
 @media (max-width: 1200px) {
     :root {
         --big-font: 4rem;
@@ -560,7 +607,7 @@ form textarea {
     }
 }
 
-/* Medium Devices (Tablets, 992px and up) */
+/* Medium Devices (Tablets, 992px and below) */
 @media (max-width: 992px) {
     header {
         padding: 18px 10%;
@@ -597,7 +644,6 @@ form textarea {
     
     .about-text h2, .about-text h4 {
         text-align: center;
-        margin-right: 0;
     }
     
     .about-text p {
@@ -632,7 +678,7 @@ form textarea {
     }
 }
 
-/* Small Devices (Landscape Phones, 768px and up) */
+/* Small Devices (Landscape Phones, 768px and below) */
 @media (max-width: 768px) {
     header {
         padding: 15px 5%;
@@ -717,7 +763,6 @@ form textarea {
     
     .portfolio-content {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
     }
     
     .portfolio-item {
@@ -737,7 +782,7 @@ form textarea {
     }
 }
 
-/* Extra Small Devices (Portrait Phones, 576px and up) */
+/* Extra Small Devices (Portrait Phones, 576px and below) */
 @media (max-width: 576px) {
     :root {
         --big-font: 2.5rem;
@@ -835,7 +880,7 @@ form textarea {
     }
 }
 
-/* Mobile Devices (Small phones, 420px and below) */
+/* Mobile Devices (Small Phones, 420px and below) */
 @media (max-width: 420px) {
     :root {
         --big-font: 2.2rem;
@@ -962,5 +1007,38 @@ form textarea {
     
     .contact-form .submit {
         font-size: 0.9rem;
+    }
+}
+
+/* Extra Large Screens (Above 1920px) */
+@media (min-width: 1920px) {
+    :root {
+        --big-font: 5rem;
+        --h2-font: 3.5rem;
+        --p-font: 1.2rem;
+    }
+    
+    section {
+        padding: 160px 20% 130px;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+    
+    header {
+        padding: 25px 20%;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+    
+    .home-text h3 {
+        font-size: 3rem;
+    }
+    
+    .about-text {
+        max-width: 60%;
+    }
+    
+    .portfolio-content {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
